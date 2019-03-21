@@ -17,10 +17,10 @@ if ($userID == "" || !$result)
 {
   echo "Unable to add new user";
 }
-
-
-
-echo "finish";
+else
+{
+  echo "Successfully added new user";
+}
 
 $mysqli->close();
 ?>
