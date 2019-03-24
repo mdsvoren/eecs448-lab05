@@ -10,21 +10,22 @@ if ($mysqli->connect_errno)
     exit();
 }
 
-$checkExistence = "SELECT userID FROM Users WHERE userID = $userID";
+$checkExistence = "SELECT userID from Users WHERE userID = '$userID'";
 $insert = "INSERT INTO Posts (content, author_id) VALUES ('$message', '$userID');";
 
 $result = $mysqli->query($checkExistence);
 
-
-if ($message == "" || !$result)
+if ($message == "" || $result == NULL)
 {
   echo "Unable to create post";
 }
 else
 {
     $mysqli->query($insert);
-  echo "Successfully added new user";
+  echo "Successfully posted message";
 }
+
+$result->free();
 
 $mysqli->close();
 ?>
