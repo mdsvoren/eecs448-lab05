@@ -13,23 +13,8 @@ if ($mysqli->connect_errno)
 $checkExistence = "SELECT userID from Users where userID='$userID'";
 $insert = "INSERT INTO Posts (content, author_id) VALUES ('$message', '$userID');";
 
-//echo "$checkExistence";
-//$result = $mysqli->query($checkExistence);
-//echo ($checkExistence);
-//$arr = array($result);
+$result = $mysqli->query($checkExistence);
 
-if ($result = $mysqli->query($checkExistence)) {
-
-    /* fetch associative array */
-    // while ($row = $result->fetch_assoc()) {
-    //     echo json_encode($row);
-    // }
-
-    /* free result set */
-  //  $result->free();
-}
-
-//echo mysql_num_rows($result);
 $arr = ($result->fetch_all());
 
 if ($message == "" || empty($arr))
@@ -43,6 +28,5 @@ else
 }
 
 $result->free();
-
 $mysqli->close();
 ?>
