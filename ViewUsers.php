@@ -20,6 +20,7 @@ if ($result = $mysqli->query($getUsers)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
         printf("%s \n", $row["userID"]);
+        echo "<br>";
     }
 
     /* free result set */
