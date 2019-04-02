@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <h1>
+        Delete Posts
+    </h1>
+</head>
+
+<body>
+    <table >
+        <?php 
+            $mysqli = new mysqli("mysql.eecs.ku.edu", "m326s072", "xah7Aedi", "m326s072");
+            $sql = mysqli_query($mysqli, "SELECT * from Users;");
+            while ($row = $sql->fetch_assoc()){
+                
+            echo "<tr><th>something</th><th>somethineElse</th></tr>";
+            
+            }
+        ?>
+    </table>
+
+</body>
+
+</html>
