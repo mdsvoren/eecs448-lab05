@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+
+<head>
+<h1>
+    View User Posts
+</h1>
+
+</head>
+
+<body>
+    Select a user:<br> 
+    <select name="owner">
+        <?php 
+            $mysqli = new mysqli("mysql.eecs.ku.edu", "m326s072", "xah7Aedi", "m326s072");
+            $sql = mysqli_query($mysqli, "SELECT * from Users;");
+            while ($row = $sql->fetch_assoc()){
+            echo "<option value=\"user\">" . $row['username'] . "</option>";
+            }
+        ?>
+    </select>
+</body>
+
+</html>
