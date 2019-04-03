@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+
 
 <head>
 <h1>
@@ -8,16 +9,16 @@
 </head>
 
 <body>
-    Select a user:<br> 
-    <select name="owner">
-        <?php 
-            $mysqli = new mysqli("mysql.eecs.ku.edu", "m326s072", "xah7Aedi", "m326s072");
-            $sql = mysqli_query($mysqli, "SELECT * from Users;");
-            while ($row = $sql->fetch_assoc()){
-            echo "<option value=\"user\">" . $row['username'] . "</option>";
-            }
-        ?>
-    </select>
+    Select a user:<br>
+    <form action="ViewUserPosts.php" method="post">
+      <select name="user" method="post">
+          <?php include 'ViewUserPosts.php';
+              generateList();
+          ?>
+      </select>
+
+      <input type="submit" value="View Posts">
+    </form>
 </body>
 
 </html>
