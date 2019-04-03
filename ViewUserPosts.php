@@ -19,11 +19,14 @@
       //echo "$userID<br>";
       $sql = mysqli_query($mysqli, "SELECT content from Posts where author_id = \"$userID\";");
       echo "hello";
+      echo "<table>";
       while ($row = $sql->fetch_assoc())
       {
-        echo $row['content'];
-        echo "<br>";
+        echo "<tr>";
+        echo "<td>" .$row['content'] . "</td>";
+        echo "</tr>";
       }
+      echo "</table>";
     }
 
 
