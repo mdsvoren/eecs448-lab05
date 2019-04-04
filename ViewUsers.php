@@ -10,19 +10,17 @@ if ($mysqli->connect_errno)
 }
 
 $getUsers = "SELECT * from Users;";
-
-//$result = $mysqli->query($getUsers);
-
-//$arr = ($result->fetch_all());
-
+echo "<h1>Registered Users:</h1>";
 if ($result = $mysqli->query($getUsers)) {
-
+echo "<h4>";
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
         printf("%s \n", $row["userID"]);
-        echo "<br>";
-    }
 
+        echo "<br>";
+
+    }
+echo "</h4>";
     /* free result set */
     $result->free();
 }

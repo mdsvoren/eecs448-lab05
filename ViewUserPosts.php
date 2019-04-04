@@ -18,12 +18,12 @@
       $userID = $_POST['user'];
       //echo "$userID<br>";
       $sql = mysqli_query($mysqli, "SELECT content from Posts where author_id = \"$userID\";");
-      echo "hello";
-      echo "<table>";
+      echo "<table style=\"border: 1px solid black;\">";
+      echo "<tr> <th>Content </th> </tr>";
       while ($row = $sql->fetch_assoc())
       {
-        echo "<tr>";
-        echo "<td>" .$row['content'] . "</td>";
+        echo "<tr style=\"border: 1px solid black;\">";
+        echo "<td style=\"border: 1px solid black;\">" .$row['content'] . "</td>";
         echo "</tr>";
       }
       echo "</table>";

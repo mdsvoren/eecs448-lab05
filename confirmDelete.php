@@ -43,6 +43,10 @@ for ($i = 0; $i < $numPosts; $i++)
     $mysqli->query($delete);
   }
 
+  echo "  <form action=\"DeletePost.html\">
+            <input type=\"submit\" value=\"Back\"/>
+    </form>"
+
 
 
 ?>
